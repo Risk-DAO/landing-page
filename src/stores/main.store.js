@@ -16,13 +16,10 @@ class MainStore {
   constructor () {
     makeAutoObservable(this)
     this.init()
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      // dark mode
-      this.blackMode = true
-    }
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-      this.blackMode = !!e.matches
-    });
+  }
+
+  setBlackMode = (mode) => {
+    this.blackMode = mode
   }
 
   init = async () => {
