@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 wrangler.toml
-worker-site/
+workers-site/
+dist/
