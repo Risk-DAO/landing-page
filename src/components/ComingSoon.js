@@ -14,7 +14,7 @@ class ComingSoon extends Component {
   }
 
   render () {
-    const color = mainStore.blackMode ? 'white' : 'black';
+    const color = mainStore.blackMode ? 'light' : 'dark';
     return (
       <div>
         <h2 style={{textAlign: 'center'}}>

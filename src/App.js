@@ -3,6 +3,7 @@ import ComingSoon from "./components/ComingSoon"
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import './themeSwitcher'
+import './App.css';
 
 function App() {
   return (
