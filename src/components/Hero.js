@@ -11,9 +11,24 @@ class Hero extends Component {
   render () {
     const color = mainStore.blackMode ? 'white' : 'black';
     return (
-      <div className="container" style={{padding: '10vh 0 20vh 0', display: 'flex', justifyContent: 'center'}}>
-        <img style={{maxHeight: '10vh', maxWidth: '66vw'}} src={`/images/${color}-wordmark.png`}/>
-      </div>
+      <section>
+        <div className="container" style={{padding: '10vh 0 0 0', display: 'flex', justifyContent: 'center'}}>
+          <img style={{maxHeight: '10vh', maxWidth: '66vw'}} src={`/images/${color}-wordmark.png`}/>
+
+        </div>
+        <p style={{
+              textAlign: 'center',
+              padding: 'var(--spacing)',
+              margin: '0 auto',
+              color: 'var(--muted-color)', 
+              maxWidth: '400px'}}>
+            Research & Risk Analysis For DeFi Lending Protocols
+          </p>
+          <p>
+            {/* <a style={{marginRight: 'var(--spacing)'}} href="https://discord.gg/NYyeDQDDvM" role="button" class="contrast" aria-label="Join the DAO">Join the DAO</a> */}
+            <a role="button" href="https://bad-debt.riskdao.org" class="contrast" aria-label="Bad Debt Dashboard">Bad Debt Dashboard</a>
+          </p>
+      </section>
     )
   }
 }

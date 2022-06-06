@@ -17,9 +17,6 @@ class ComingSoon extends Component {
     const color = mainStore.blackMode ? 'light' : 'dark';
     return (
       <div>
-        <h2 style={{textAlign: 'center'}}>
-          Research & Risk Analysis <br/> For DeFi Lending Protocols
-        </h2>
         <div className="grid">
           <a style={styles.a}href="https://medium.com/risk-dao/introducing-risk-dao-75a241115c95" target="_blank">
             <article style={styles.article}>
