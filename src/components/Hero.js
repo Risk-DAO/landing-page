@@ -25,10 +25,8 @@ class Hero extends Component {
             Research & Risk Analysis For DeFi Lending Protocols
           </p>
           <p>
-            {/* <a style={{marginRight: 'var(--spacing)'}} href="https://discord.gg/NYyeDQDDvM" role="button" class="contrast" aria-label="Join the DAO">Join the DAO</a> */}
-            <a role="button" href="https://bad-debt.riskdao.org" class="contrast" aria-label="Bad Debt Dashboard">Bad Debt Dashboard</a>
-            <a style={{marginLeft: 'var(--spacing)'}}
-              role="button" href="https://depeg.riskdao.org" class="secondary" aria-label="Bad Debt Dashboard">ETH Depegging Monitor</a>
+            <a style={{minWidth: '280px', margin: '10px'}} role="button" href="https://bad-debt.riskdao.org" class="contrast" aria-label="Bad Debt Dashboard">Bad Debt Dashboard</a>
+            <a style={{minWidth: '280px', margin: '10px'}} role="button" href="https://depeg.riskdao.org" class="contrast outline" aria-label="Bad Debt Dashboard">ETH Depegging Monitor</a>
           </p>
       </section>
     )
