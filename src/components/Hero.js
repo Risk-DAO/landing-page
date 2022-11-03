@@ -23,11 +23,7 @@ class Hero extends Component {
               color: 'var(--muted-color)', 
               maxWidth: '400px'}}>
             Research & Risk Analysis For DeFi Lending Protocols
-          </p>
-          <p>
-            <a style={{minWidth: '280px', margin: '10px'}} role="button" href="https://bad-debt.riskdao.org" class="contrast" aria-label="Bad Debt Dashboard">Bad Debt Dashboard</a>
-            <a style={{minWidth: '280px', margin: '10px'}} role="button" href="https://depeg.riskdao.org" class="contrast outline" aria-label="Bad Debt Dashboard">ETH Depegging Monitor</a>
-          </p>
+        </p>
       </section>
     )
   }
