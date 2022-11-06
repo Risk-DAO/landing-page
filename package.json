@@ -14,13 +14,14 @@
     "moment": "^2.29.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
     "web3-utils": "^1.7.3"
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "react-app-rewired build && ./generate-static.sh",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },

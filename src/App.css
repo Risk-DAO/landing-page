@@ -99,3 +99,54 @@ article{
   /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]; */
   box-shadow: 0rem 0.25rem 1rem rgba(128, 128, 128, 0.25), 0rem -0.25rem 1rem rgba(128, 128, 128, 0.25) !important;
 }
+
+.dashboard-card {
+  width: calc(100% - var(--spacing));
+  margin: calc(var(--spacing) / 2);
+}
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  .dashboard-card {
+    width: calc(50% - var(--spacing));
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  .dashboard-card {
+    width: calc(33% - var(--spacing));
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .dashboard-card {
+    width: calc(33% - var(--spacing));
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  .dashboard-card {
+    width: calc(33% - var(--spacing));
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+  .dashboard-card {
+    width: calc(33% - var(--spacing));
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.blur-onhover{
+  transition: all 0.3s ease-in-out;
+}
+.blur-onhover:hover{
+  opacity: 0.7;
+}

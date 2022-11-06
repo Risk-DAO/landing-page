@@ -17,6 +17,10 @@ class ComingSoon extends Component {
     const color = mainStore.blackMode ? 'light' : 'dark';
     return (
       <div>
+        <p>
+          <a style={{minWidth: '280px', margin: '10px'}} role="button" href="https://bad-debt.riskdao.org" class="contrast" aria-label="Bad Debt Dashboard">Bad Debt Dashboard</a>
+          <a style={{minWidth: '280px', margin: '10px'}} role="button" href="/dashboards" class="contrast outline" aria-label="Risk Analysis Dashboards">Risk Analysis Dashboards</a>
+        </p>
         <div className="grid">
           <a style={styles.a}href="https://medium.com/risk-dao/introducing-risk-dao-75a241115c95" target="_blank">
             <article style={styles.article}>
