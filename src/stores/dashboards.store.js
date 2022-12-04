@@ -40,8 +40,8 @@ class DashboardsStore {
         black: "https://nervos-github-api.riskdao.workers.dev/logos/nervos-dark.svg",
         white: "https://nervos-github-api.riskdao.workers.dev/logos/nervos.svg"
       },
-      comingSoon: true,
-    },{
+    },
+    {
       name: 'agave',
       description: 'the DeFi lending protocol on Gnosis chain',
       url: 'https://agave.riskdao.org',
@@ -49,7 +49,6 @@ class DashboardsStore {
         black: "/images/platforms/agave.svg",
         white: "/images/platforms/agave.svg",
       },
-      comingSoon: true,
     },
   ]
   
