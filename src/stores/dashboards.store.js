@@ -49,6 +49,16 @@ class DashboardsStore {
         black: "/images/platforms/agave.svg",
         white: "/images/platforms/agave.svg",
       },
+    },    
+    {
+      name: 'meld',
+      description: 'The Banking Stack for DeFi, on Cardano',
+      url: 'https://www.meld.com/',
+      logo: {
+        black: "/images/platforms/meld.svg",
+        white: "/images/platforms/meld-black.svg",
+      },
+      comingSoon: true,
     },
   ]
   
