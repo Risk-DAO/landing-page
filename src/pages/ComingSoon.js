@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import {observer} from "mobx-react"
-import mainStore from "../stores/main.store"
+import { Component } from "react";
+import mainStore from "../stores/main.store";
+import { observer } from "mobx-react";
 
 const styles = {
   article: { minHeight: '340px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' },
@@ -20,6 +20,7 @@ class ComingSoon extends Component {
         <p>
           <a style={{minWidth: '280px', margin: '10px'}} role="button" href="https://bad-debt.riskdao.org" class="contrast" aria-label="Bad Debt Dashboard">Bad Debt Dashboard</a>
           <a style={{minWidth: '280px', margin: '10px'}} role="button" href="/dashboards" class="contrast outline" aria-label="Risk Analysis Dashboards">Risk Analysis Dashboards</a>
+          <a style={{minWidth: '280px', margin: '10px'}} role="button" href="https://irs.riskdao.org" class="contrast" aria-label="Interest Rate Simulator">Interest Rate Simulator</a>
         </p>
         <div className="grid">
           <a style={styles.a}href="https://medium.com/risk-dao/introducing-risk-dao-75a241115c95" target="_blank">
