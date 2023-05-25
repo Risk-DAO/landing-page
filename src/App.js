@@ -8,9 +8,11 @@ import Dashboards from "./pages/Dashboards"
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Partners from "./components/Partners"
+import mainStore from './stores/main.store'
 import { observer } from "mobx-react"
 
 function App() {
+  const blackMode = mainStore.blackMode;
   return (
     <div className="App">
       <Router>
@@ -20,7 +22,8 @@ function App() {
             <Route exact path="/"  element={<ComingSoon/>}/>
             <Route exact path="/dashboards" element={<Dashboards/>}/>
           </Routes>
-          <Partners/>
+          <hr/>
+          <Partners blackMode={blackMode}/>
         </div>
         <Footer/>
       </Router>

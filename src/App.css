@@ -158,8 +158,19 @@ article.dashboard-card.clickable.blur-onhover:hover{
 .partnersContainer {
 
 }
+.trustedByDark{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5vh;
+  margin-top: 3vh;
+}
 .trustedBy{
-
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 5vh;
+  margin-top: 3vh;
 }
 .gridContainer{
   display: grid;
@@ -176,4 +187,9 @@ article.dashboard-card.clickable.blur-onhover:hover{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.gridItem img{
+  width: 100%;
+  height: 100%;
 }
