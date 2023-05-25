@@ -1,6 +1,5 @@
 import aave from '../logos/aave.svg';
 import agave from '../logos/agave.png';
-import agaveDark from '../logos/agaveDark.svg';
 import aurigami from '../logos/aurigami.svg';
 import badger from '../logos/badger.svg';
 import badgerDark from '../logos/badgerDark.svg';
@@ -31,7 +30,7 @@ function GridItem(partner){
 
 export default function Partners(props){
     const partners = [aave, agave, aurigami, badger, compound, flare, gearbox, godwoken, hadouken, liquity, maker, meld, moonwell, nftperp, vesta];
-    const partnersDark = [aave, agaveDark, aurigami, badgerDark, compoundDark, flare, gearboxDark, godwokenDark, hadouken, liquityDark, maker, meldDark, moonwell, nftperpDark, vestaDark];
+    const partnersDark = [aave, agave, aurigami, badgerDark, compoundDark, flare, gearboxDark, godwokenDark, hadouken, liquityDark, maker, meldDark, moonwell, nftperpDark, vestaDark];
     const renderPartners = props.blackMode ? partnersDark : partners
     const className = props.blackMode ? 'trustedByDark' : 'trustedBy'
 
