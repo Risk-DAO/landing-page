@@ -173,6 +173,7 @@ article.dashboard-card.clickable.blur-onhover:hover{
 .gridItem{
   height: 5vh;
   width: 10vw;
-  display: block;
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
