@@ -6,15 +6,6 @@ class DashboardsStore {
 
   dashboards = [
     {
-      name: 'aurigami',
-      description: 'The native money market on Aurora',
-      url: 'https://aurigami.riskdao.org',
-      logo: {
-        black: "https://aurigami.riskdao.org/logos/aurigami.svg",
-        white: "https://aurigami.riskdao.org/logos/aurigami.svg"
-      }
-    },
-    {
       name: 'vesta',
       description: 'a layer 2-first lending protocol, without interest',
       url: 'https://vesta.riskdao.org',
