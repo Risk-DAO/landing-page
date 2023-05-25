@@ -1,4 +1,4 @@
-import aave from '../logos/aave.svg';
+import aave from '../logos/aave.png';
 import agave from '../logos/agave.png';
 import aurigami from '../logos/aurigami.svg';
 import badger from '../logos/badger.svg';
