@@ -165,11 +165,14 @@ article.dashboard-card.clickable.blur-onhover:hover{
   display: grid;
   justify-content: space-evenly;
   column-gap: 1vw;
-  row-gap: 1vh;
+  row-gap: 4vh;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto;
 
 }
 .gridItem{
-
+  height: 5vh;
+  width: 10vw;
+  display: block;
+  margin: auto;
 }
