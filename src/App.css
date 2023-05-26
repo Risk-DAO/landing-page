@@ -159,17 +159,17 @@ article.dashboard-card.clickable.blur-onhover:hover{
 
 }
 .trustedByDark{
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: bold;
   color: white;
-  margin-bottom: 5vh;
+  margin-bottom: 8vh;
   margin-top: 3vh;
 }
 .trustedBy{
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: bold;
   color: black;
-  margin-bottom: 5vh;
+  margin-bottom: 8vh;
   margin-top: 3vh;
 }
 .gridContainer{
