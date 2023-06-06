@@ -22,23 +22,114 @@ import nftperpDark from '../logos/nftperpDark.png';
 import vesta from '../logos/vesta.svg';
 import vestaDark from '../logos/vestaDark.svg';
 
-function GridItem(partner){
+function GridItem(partner, blackMode) {
     return <div className="gridItem">
-        <img alt={`${partner} logo`} src={partner} />
+        <img alt={`${partner} logo`} src={blackMode ? partner.logoDark : partner.logo} title={partner.description} />
     </div>
 }
 
-export default function Partners(props){
-    const partners = [aave, agave, aurigami, badger, compound, flare, gearbox, godwoken, hadouken, liquity, maker, meld, moonwell, nftperp, vesta];
-    const partnersDark = [aave, agave, aurigami, badgerDark, compoundDark, flare, gearboxDark, godwokenDark, hadouken, liquityDark, maker, meldDark, moonwell, nftperpDark, vestaDark];
-    const renderPartners = props.blackMode ? partnersDark : partners
-    const className = props.blackMode ? 'trustedByDark' : 'trustedBy'
+const partners = [
+    {
+        'name': 'aave',
+        'logo': aave,
+        'logoDark': aave,
+        'description': 'Aave grants',
+    },
+    {
+        'name': 'agave',
+        'logo': agave,
+        'logoDark': agave,
+        'description': 'Lending market analysis and monitoring',
+    },
+    {
+        'name': 'aurigami',
+        'logo': aurigami,
+        'logoDark': aurigami,
+        'description': 'Lending market analysis and monitoring',
+    },
+    {
+        'name': 'badger',
+        'logo': badger,
+        'logoDark': badgerDark,
+        'description': 'eBTC analysis',
+    },
+    {
+        'name': 'compound',
+        'logo': compound,
+        'logoDark': compoundDark,
+        'description': 'Compound grants',
+    },
+    {
+        'name': 'flare',
+        'logo': flare,
+        'logoDark': flare,
+        'description': 'fAsset analysis',
+    },
+    {
+        'name': 'gearbox',
+        'logo': gearbox,
+        'logoDark': gearboxDark,
+        'description': 'Lending market analysis and monitoring',
+    },
+    {
+        'name': 'godwoken',
+        'logo': godwoken,
+        'logoDark': godwokenDark,
+        'description': 'Bug bounty',
+    },
+    {
+        'name': 'hadouken',
+        'logo': hadouken,
+        'logoDark': hadouken,
+        'description': 'Lending market analysis and monitoring',
+    },
+    {
+        'name': 'liquity',
+        'logo': liquity,
+        'logoDark': liquityDark,
+        'description': 'Research bounty: game theoretic analysis of Chicken Bonds.',
+    },
+    {
+        'name': 'maker',
+        'logo': maker,
+        'logoDark': maker,
+        'description': 'Bounty for pushing a vote to clear bad debt',
+    },
+    {
+        'name': 'meld',
+        'logo': meld,
+        'logoDark': meldDark,
+        'description': 'Lending market analysis and monitoring',
+    },
+    {
+        'name': 'moonwell',
+        'logo': moonwell,
+        'logoDark': moonwell,
+        'description': 'Bug bounty',
+    },
+    {
+        'name': 'nftperp',
+        'logo': nftperp,
+        'logoDark': nftperpDark,
+        'description': '',
+    },
+    {
+        'name': 'vesta',
+        'logo': vesta,
+        'logoDark': vestaDark,
+        'description': 'Lending market analysis and monitoring',
+    }
+]
+
+export default function Partners(props) {
+    const blackMode = props.blackMode;
+    const className = blackMode ? 'trustedByDark' : 'trustedBy'
 
 
     return <div className="partnersContainer"><div className={className}>Trusted By
-        </div>
-        <div className="gridContainer">
-        {renderPartners.map((_)=> GridItem(_))}
     </div>
+        <div className="gridContainer">
+            {partners.map((_) => GridItem(_, blackMode))}
+        </div>
     </div>
 }
