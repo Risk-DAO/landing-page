@@ -13,12 +13,12 @@ import godwokenDark from '../logos/godwokenDark.svg';
 import hadouken from '../logos/hadouken.svg';
 import liquity from '../logos/liquity.svg';
 import liquityDark from '../logos/liquityDark.svg';
-import maker from '../logos/maker.png';
+import maker from '../logos/maker.svg';
 import meld from '../logos/meld.svg';
 import meldDark from '../logos/meldDark.svg';
-import moonwell from '../logos/moonwell.png';
-import nftperp from '../logos/nftperp.png';
-import nftperpDark from '../logos/nftperpDark.png';
+import moonwell from '../logos/moonwell.svg';
+import nftperp from '../logos/nftperp.svg';
+import nftperpDark from '../logos/nftperpDark.svg';
 import vesta from '../logos/vesta.svg';
 import vestaDark from '../logos/vestaDark.svg';
 
