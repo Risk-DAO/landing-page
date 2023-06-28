@@ -5,15 +5,15 @@ import { useState } from "react";
 
 const mediumRSSFeedURL = "http://dev-0.la-tribu.xyz:4050/medium"
 const styles = {
-    article: { minHeight: '340px', display: 'flex', flexDirection: 'column', justifyContent: 'center', maxHeight: '5vh' },
+    article: {display: 'flex', flexDirection: 'column', justifyContent: 'center', maxHeight: '25vh', minHeight: '25vh'},
     a: {width: '30%', margin: '0 10px 0 0'}
 }
 
 function Card(props) {
     return (<a style={styles.a} href={props.data.link} target="blank">
         <article style={styles.article}>
-            <img src={props.data.thumbnail} alt="" />
-            {props.data.title}
+            <img style={{height:'40%', marginBottom:'5%'}} src={props.data.thumbnail} alt="" />
+            <small style={{height:'40%', marginTop: '5%'}}>{props.data.title}</small>
         </article>
     </a>
     )
