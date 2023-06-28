@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const mediumRSSFeedURL = "http://dev-0.la-tribu.xyz:4050/medium"
+const mediumRSSFeedURL = "https://riskdao-landing-api.la-tribu.xyz/medium"
 const styles = {
     article: {display: 'flex', flexDirection: 'column', justifyContent: 'center', maxHeight: '25vh', minHeight: '25vh'},
     a: {width: '30%', margin: '0 10px 0 0'}
