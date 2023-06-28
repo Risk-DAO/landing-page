@@ -1,5 +1,5 @@
 {
-  "name": "bad-debt-ui",
+  "name": "risk-dao-landing-page",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,6 @@
     "web-vitals": "^2.1.4",
     "web3-utils": "^1.7.3"
   },
-  "proxy": "https://medium.com",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build && ./generate-static.sh",
