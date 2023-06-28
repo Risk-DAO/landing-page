@@ -26,7 +26,7 @@ function App() {
           <hr/>
           <Partners blackMode={blackMode}/>
           <hr/>
-          <Medium />
+          <Medium blackMode={blackMode}/>
         </div>
         <Footer/>
       </Router>

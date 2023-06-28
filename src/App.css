@@ -158,6 +158,17 @@ article.dashboard-card.clickable.blur-onhover:hover{
   -moz-box-shadow: 0px 0px 40px 1px var(--color)!important;
 }
 
+.Medium-buttons{
+  width: 5vw;
+  height: 5vh;
+  opacity: 20%;
+}
+.Medium-buttons-dark{
+  width: 5vw;
+  height: 5vh;
+  opacity: 20%;
+  filter: invert(100%);
+}
 
 .partnersContainer {
 

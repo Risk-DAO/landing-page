@@ -8,7 +8,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.27.2",
+    "axios": "^1.4.0",
     "mobx": "^6.5.0",
     "mobx-react": "^7.4.0",
     "moment": "^2.29.3",
@@ -19,6 +19,7 @@
     "web-vitals": "^2.1.4",
     "web3-utils": "^1.7.3"
   },
+  "proxy": "https://medium.com",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build && ./generate-static.sh",

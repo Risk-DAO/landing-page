@@ -1,0 +1,9 @@
+{
+    "name": "landing-page-api",
+    "version": "1",
+    "private": true,
+    "dependencies": {
+      "express": "^4.18.2",
+      "axios": "^1.4.0"
+  }
+}
