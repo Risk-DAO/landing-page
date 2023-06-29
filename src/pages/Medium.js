@@ -36,12 +36,18 @@ export default function Medium(props) {
 
     function handleButton(direction) {
         if (direction === 'left') {
-            if (postIndex > 0) {
+            if (postIndex > 1) {
+                setPostIndex(postIndex - 2);
+            }
+            if (postIndex === 1) {
                 setPostIndex(postIndex - 1);
             }
         }
         if (direction === 'right') {
-            if (postIndex < (mediumData.length - 3)) {
+            if (postIndex < (mediumData.length - 4)) {
+                setPostIndex(postIndex + 2);
+            }
+            if (postIndex === (mediumData.length - 4)) {
                 setPostIndex(postIndex + 1);
             }
         }
