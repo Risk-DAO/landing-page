@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Grid, Slide, Typography } from "@mui/material";
+import { Card, CardActionArea, CardContent, CardMedia, Grid, Slide, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 import { Box } from "@mui/system";
@@ -9,8 +9,8 @@ const mediumRSSFeedURL = "https://riskdao-landing-api.la-tribu.xyz/medium"
 
 const gridContainer = {
     display: "grid",
-    gridAutoColumns: "1fr",
-    gridAutoFlow: "column",
+    gridTemplateRow: "1fr",
+    gridAutoFlow: "row",
     gap: '1vw'
   };
 
@@ -21,15 +21,17 @@ function RenderCard(props) {
     }
     const onTop = props.onTop ? 'tooltip' : '';
     return (
-        <Box sx={{width:'100%', height:'100%', zIndex: onTop}} ref={containerRef}>
-        <Slide container={containerRef.current} in={props.slideIn} direction={props.slideDirection}>
+        <Box sx={{width:'100%', height:'100%', zIndex: onTop}} ref={containerRef} rel="noreferrer noopener">
+        <Slide sx={{height:'100%'}} container={containerRef.current} in={props.slideIn} direction={props.slideDirection}>
             <Card sx={{height: '100%'}}>
+                <CardActionArea href={props.article.link} target="_blank">
                 <CardMedia  sx={{height: '45%'}} alt={props.article.title} component='img' image={props.article.thumbnail} />
                 <CardContent  sx={{height: '45%'}}>
                     <Typography component='div'>
                         {props.article.title}
                     </Typography>
                 </CardContent>
+                </CardActionArea>
             </Card>
         </Slide>
         </Box>
@@ -72,17 +74,17 @@ export default function Medium(props) {
     }
     return (<Box sx={{marginTop: '3vh', width: '100%', height: '30vh', display: 'flex', flexDirection: 'row', alignContent:'center', alignItems:'center', justifyContent:'space-between'}}>
         <img className={className} style={postIndex === 0 ? { opacity: '5%' } : {}} src={arrow} alt="left-button" onClick={() => handleButton('left')} />
-        <Box sx={gridContainer}>
-        <Grid item xs={12} sm={6} lg={4} xl={4}>
+        <Grid container gridAutoFlow='column' direction="row" justifyContent="center" alignItems="center" rowSpacing={2} columnSpacing={2}>
+        <Grid sx={{height:'100%'}} item xs={12} sm={6} lg={4} xl={4}>
         <RenderCard onTop={true} slideIn={true} slideDirection={slideDirection} article={mediumData[(mediumData.length - 1)]} />
         </Grid>
-        <Grid item xs={12} sm={6} lg={4} xl={4}>
-        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={mediumData[postIndex]} />
+        <Grid sx={{height:'100%'}} item xs={12} sm={6} lg={4} xl={4}>
+        <RenderCard sx={{height:'100%'}} slideIn={slideIn} slideDirection={slideDirection} article={mediumData[postIndex]} />
         </Grid>
         <Grid item xs={12} sm={6} lg={4} xl={4}>
         <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={mediumData[postIndex + 1]} />
         </Grid>
-        </Box>
+        </Grid>
         <img className={className} style={postIndex === mediumData.length - 3 ? { opacity: '5%', transform: 'rotate(180deg' } : { transform: 'rotate(180deg' }} src={arrow} alt="right-button" onClick={() => handleButton('right')} /></Box>
     )
 }
