@@ -193,6 +193,9 @@ article.dashboard-card.clickable.blur-onhover:hover {
   height: 5vh;
   opacity: 20%;
 }
+.Medium-buttons:hover{
+  opacity: 30%
+}
 
 .Medium-buttons-dark {
   width: 4vw;
@@ -200,7 +203,9 @@ article.dashboard-card.clickable.blur-onhover:hover {
   opacity: 20%;
   filter: invert(100%);
 }
-
+.Medium-buttons-dark:hover{
+  opacity: 30%
+}
 .partnersContainer {
   margin-bottom: 3vh;
 }
