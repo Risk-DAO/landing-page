@@ -183,24 +183,30 @@ article.dashboard-card.clickable.blur-onhover:hover {
 }
 .Medium-text-overflow{
   display: -webkit-box;
-    max-width: 200px;
+  height: 100%;
+    max-width: 100%;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 .Medium-buttons {
-  width: 4vw;
-  height: 5vh;
+  width: 3vw;
+  height: 4vh;
   opacity: 20%;
+}
+.Medium-buttons:hover{
+  opacity: 30%
 }
 
 .Medium-buttons-dark {
-  width: 4vw;
-  height: 5vh;
+  width: 3vw;
+  height: 4vh;
   opacity: 20%;
   filter: invert(100%);
 }
-
+.Medium-buttons-dark:hover{
+  opacity: 30%
+}
 .partnersContainer {
   margin-bottom: 3vh;
 }
