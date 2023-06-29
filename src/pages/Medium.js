@@ -1,4 +1,4 @@
-import { Collapse, List } from "@mui/material";
+import { Card, CardActionArea, CardContent, CardMedia, List, ListItem, Slide, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 import { TransitionGroup } from "react-transition-group";
@@ -7,19 +7,20 @@ import axios from "axios";
 
 const mediumRSSFeedURL = "https://riskdao-landing-api.la-tribu.xyz/medium"
 
-function renderCard(article, solo=false) {
-    const width = solo ? '33%' : '50%'
+function renderCard(article) {
     return (
-        <a style={{ width:width, height:'35vh', margin: '0 1% 0 1%' }} href={article.link} target="blank">
-        <article style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '25vh' }}>
-            <header style={{height: '14vh', marginBottom: '0', display:'flex', alignItems:'center ', justifyContent:'center'}}>
-            <img style={{maxHeight:'11vh', marginBottom: '5%' }} src={article.thumbnail} alt="" />
-            </header>
-            <body style={{ height: '8vh', marginBottom: '5%' }}>
-            <small className="Medium-text-overflow" style={{marginTop: '5%'}}>{article.title}</small>
-            </body>
-        </article>
-    </a>
+        <ListItem>
+            <Card>
+                <CardActionArea>
+                <CardMedia component='img' image={article.thumbnail} />
+                <CardContent>
+                    <Typography component='div'>
+                        {article.title}
+                    </Typography>
+                </CardContent>
+                </CardActionArea>
+            </Card>
+        </ListItem>
     )
 }
 
@@ -66,8 +67,8 @@ export default function Medium(props) {
             <div style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', width:'100%' }}>
                 <List style={{ display: "flex", flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width:'100%' }}>
                 <TransitionGroup style={{display: 'flex', flexDirection:'row', justifyContent: 'center', width:'100%' }}>
-                <Collapse>{renderCard((mediumData[mediumData.length - 1]))}</Collapse>
-                {mediumData.filter((_, index) =>(index === postIndex || index === postIndex +1)).map(_ => <Collapse key={_.title}>{renderCard(_)}</Collapse>)}
+                <Slide sx={{width: '33%', height:'100%'}}>{renderCard((mediumData[mediumData.length - 1]))}</Slide>
+                {mediumData.filter((_, index) =>(index === postIndex || index === postIndex +1)).map(_ => <Slide direction={postIndex%2 ? 'right' : 'left'} sx={{width: '33%', height:'100%'}} key={_.title}>{renderCard(_)}</Slide>)}
                 </TransitionGroup>
                 </List>
             </div>
