@@ -34,7 +34,7 @@ function GridItem(partner, blackMode) {
 
 
     return <div className="gridItem" onTouchStart={handleModal}>
-        <Dialog className='contrast' onClose={(event, reason) =>{if(reason === 'backdropClick'){setVisibility(!visibility)}}} open={visibility}><DialogTitle>{modalTitle}</DialogTitle> <DialogContent><DialogContentText>{partner.description}</DialogContentText></DialogContent></Dialog>
+        <Dialog className='contrast' onClose={(event, reason) =>{if(reason === 'backdropClick'){handleModal()}}} open={visibility}><DialogTitle>{modalTitle}</DialogTitle> <DialogContent><DialogContentText>{partner.description}</DialogContentText></DialogContent></Dialog>
         <img alt={`${partner.name} logo`} src={blackMode ? partner.logoDark : partner.logo} title={partner.description} />
     </div>
 }
