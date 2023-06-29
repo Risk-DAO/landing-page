@@ -190,8 +190,8 @@ article.dashboard-card.clickable.blur-onhover:hover {
     overflow: hidden;
 }
 .Medium-buttons {
-  width: 4vw;
-  height: 5vh;
+  width: 3vw;
+  height: 4vh;
   opacity: 20%;
 }
 .Medium-buttons:hover{
@@ -199,8 +199,8 @@ article.dashboard-card.clickable.blur-onhover:hover {
 }
 
 .Medium-buttons-dark {
-  width: 4vw;
-  height: 5vh;
+  width: 3vw;
+  height: 4vh;
   opacity: 20%;
   filter: invert(100%);
 }
