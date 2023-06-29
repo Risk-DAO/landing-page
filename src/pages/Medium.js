@@ -12,8 +12,8 @@ const styles = {
 function Card(props) {
     return (<a style={styles.a} href={props.data.link} target="blank">
         <article style={styles.article}>
-            <header style={{marginBottom: '0'}}>
-            <img style={{ height: '12vh', marginBottom: '5%' }} src={props.data.thumbnail} alt="" />
+            <header style={{height: '14vh', marginBottom: '0', display:'flex', alignItems:'center ', justifyContent:'center'}}>
+            <img style={{maxHeight:'11vh', marginBottom: '5%' }} src={props.data.thumbnail} alt="" />
             </header>
             <body style={{ height: '8vh', marginBottom: '5%' }}>
             <small className="Medium-text-overflow" style={{marginTop: '5%'}}>{props.data.title}</small>
