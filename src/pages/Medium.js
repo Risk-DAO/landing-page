@@ -16,7 +16,7 @@ function Card(props) {
             <img style={{ height: '12vh', marginBottom: '5%' }} src={props.data.thumbnail} alt="" />
             </header>
             <body style={{ height: '8vh', marginBottom: '5%' }}>
-            <small style={{marginTop: '5%'}}>{props.data.title}</small>
+            <small className="Medium-text-overflow" style={{marginTop: '5%'}}>{props.data.title}</small>
             </body>
         </article>
     </a>

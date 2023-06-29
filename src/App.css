@@ -181,7 +181,13 @@ article.dashboard-card.clickable.blur-onhover:hover {
     opacity: 1;
   }
 }
-
+.Medium-text-overflow{
+  display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 .Medium-buttons {
   width: 4vw;
   height: 5vh;
