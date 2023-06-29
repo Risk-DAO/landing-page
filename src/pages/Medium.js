@@ -7,12 +7,6 @@ import axios from "axios";
 
 const mediumRSSFeedURL = "https://riskdao-landing-api.la-tribu.xyz/medium"
 
-const gridContainer = {
-    display: "grid",
-    gridTemplateRow: "1fr",
-    gridAutoFlow: "row",
-    gap: '1vw'
-  };
 
 function RenderCard(props) {
     const containerRef = useRef();
@@ -22,8 +16,8 @@ function RenderCard(props) {
     const onTop = props.onTop ? '20' : '2';
     return (
         <Box sx={{width:'100%', height:'100%'}} ref={containerRef} rel="noreferrer noopener">
-        <Slide sx={{minHeight:{xs:'100%', sm:'100%', lg:'100%', xl:'100%',display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', zIndex:onTop}}} container={containerRef.current} in={props.slideIn} direction={props.slideDirection}>
-            <Card elevation={12} sx={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', zIndex:onTop}}>
+        <Slide sx={{minHeight:{xs:'100%', sm:'100%', lg:'100%', xl:'100%',display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}} container={containerRef.current} in={props.slideIn} direction={props.slideDirection}>
+            <Card elevation={12} sx={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%'}}>
                 <CardActionArea href={props.article.link} target="_blank">
                 <CardMedia  sx={{height: '45%'}} alt={props.article.title} component='img' image={props.article.thumbnail} />
                 <CardContent  sx={{height: '45%'}}>
