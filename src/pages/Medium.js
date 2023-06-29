@@ -10,13 +10,10 @@ const mediumRSSFeedURL = "https://riskdao-landing-api.la-tribu.xyz/medium"
 const gridContainer = {
     display: "grid",
     gridAutoColumns: "1fr",
-    gridAutoFlow: "column"
+    gridAutoFlow: "column",
+    gap: '1vw'
   };
 
-  const gridItem = {
-    margin: "8px",
-    border: "1px solid red"
-  };
 function RenderCard(props) {
     const containerRef = useRef();
     if(!props.article){
@@ -54,7 +51,7 @@ export default function Medium(props) {
     }, []);
 
     function handleButton(direction) {
-        const increment = direction === 'left' ? postIndex === 0 ? 0 : -1 : postIndex === (mediumData.length - 3) ? 0 : 1;
+        const increment = direction === 'left' ? postIndex === 0 ? 0 : postIndex === 1 ? -1 : -2 : postIndex === (mediumData.length - 3) ? 0 : postIndex === (mediumData.length - 4) ? 1 : 2;
         if(increment === 0){
             return
         }
@@ -73,9 +70,9 @@ export default function Medium(props) {
             <div>Could not load Medium posts</div>
         )
     }
-    return (<Box sx={{marginTop: '3vh', width: '100%', height: '20vh', display: 'flex', flexDirection: 'row', alignContent:'center', alignItems:'center', justifyContent:'space-between'}}>
+    return (<Box sx={{marginTop: '3vh', width: '100%', height: '30vh', display: 'flex', flexDirection: 'row', alignContent:'center', alignItems:'center', justifyContent:'space-between'}}>
         <img className={className} style={postIndex === 0 ? { opacity: '5%' } : {}} src={arrow} alt="left-button" onClick={() => handleButton('left')} />
-        <Grid container gridTemplateColumns="1fr" gridAutoFlow='column' direction="row" justifyContent="center" alignItems="center" rowSpacing={2} columnSpacing={2}>
+        <Box sx={gridContainer}>
         <Grid item xs={12} sm={6} lg={4} xl={4}>
         <RenderCard onTop={true} slideIn={true} slideDirection={slideDirection} article={mediumData[(mediumData.length - 1)]} />
         </Grid>
@@ -85,7 +82,7 @@ export default function Medium(props) {
         <Grid item xs={12} sm={6} lg={4} xl={4}>
         <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={mediumData[postIndex + 1]} />
         </Grid>
-        </Grid>
+        </Box>
         <img className={className} style={postIndex === mediumData.length - 3 ? { opacity: '5%', transform: 'rotate(180deg' } : { transform: 'rotate(180deg' }} src={arrow} alt="right-button" onClick={() => handleButton('right')} /></Box>
     )
 }
