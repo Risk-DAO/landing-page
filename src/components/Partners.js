@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import { Dialog, DialogContent, DialogContentText, DialogTitle, Tooltip } from '@mui/material';
 
 import aave from '../logos/aave.svg';
 import agave from '../logos/agave.svg';
@@ -35,10 +35,9 @@ function GridItem(partner, blackMode) {
 
     return <div className={partner.name === 'moonwell' && !blackMode ? 'gridItemMoonwell' : 'gridItem'} onTouchStart={handleModal}>
         <Dialog className='contrast' onClose={() => setVisibility(false)} open={visibility}><DialogTitle>{modalTitle}</DialogTitle> <DialogContent><DialogContentText>{partner.description}</DialogContentText></DialogContent></Dialog>
-        <img alt={`${partner.name} logo`} src={blackMode ? partner.logoDark : partner.logo} title={partner.description} />
+        <Tooltip disableFocusListener enterTouchDelay={0} title={partner.description}><img alt={`${partner.name} logo`} src={blackMode ? partner.logoDark : partner.logo} /></Tooltip>
     </div>
 }
-
 const partners = [
     {
         'name': 'aave',
