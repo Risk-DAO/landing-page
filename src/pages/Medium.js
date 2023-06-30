@@ -38,9 +38,9 @@ function RenderCard(props) {
         <Slide sx={{minHeight:{xs:'100%', sm:'100%', lg:'100%', xl:'100%',display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}} container={containerRef.current} in={props.slideIn} direction={props.slideDirection}>
             <Card elevation={12} sx={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%'}}>
                 <CardActionArea href={props.article.link} target="_blank">
-                <CardMedia  sx={{height: !mobile ? '10vh' : '45%', padding: 2}} alt={props.article.title} component='img' image={mainStore.blackMode && props.article.thumbnailBlack ? props.article.thumbnailBlack : props.article.thumbnail} />
+                <CardMedia  sx={{height: !mobile ? '15vh' : '45%', padding: 2}} alt={props.article.title} component='img' image={mainStore.blackMode && props.article.thumbnailBlack ? props.article.thumbnailBlack : props.article.thumbnail} />
                 <CardContent sx={{height: '45%'}}>
-                    <Typography sx={{overflow: 'hidden', textOverflow:'ellipsis', display:'-webkit-box', WebkitLineClamp: !mobile ? 1 : 4, WebkitBoxOrient:'vertical'}} component='div'>
+                    <Typography sx={{overflow: 'hidden', textOverflow:'ellipsis', display:'-webkit-box', WebkitLineClamp: !mobile ? 2 : 4, WebkitBoxOrient:'vertical'}} component='div'>
                         {props.article.title}
                     </Typography>
                 </CardContent>
