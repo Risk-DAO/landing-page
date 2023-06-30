@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, CardMedia, Container, Grid, Slide, Tooltip, Typography } from "@mui/material";
+import { Card, CardActionArea, CardContent, CardMedia, Container, Grid, Slide, Tooltip, Typography, useMediaQuery } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 import { Box } from "@mui/system";
@@ -28,6 +28,8 @@ const lastPost = {
 
 function RenderCard(props) {
     const containerRef = useRef();
+    const mobile = useMediaQuery('(min-width:600px)');
+    console.log(mobile)
     if(!props.article){
         return
     }
@@ -35,18 +37,16 @@ function RenderCard(props) {
         <Box sx={{width:'100%', height:'100%', maxHeight:'30vh'}} ref={containerRef} rel="noreferrer noopener">
             <Tooltip title={props.article.title}>
         <Slide sx={{minHeight:{xs:'100%', sm:'100%', lg:'100%', xl:'100%',display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}} container={containerRef.current} in={props.slideIn} direction={props.slideDirection}>
-            
             <Card elevation={12} sx={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%'}}>
                 <CardActionArea href={props.article.link} target="_blank">
                 <CardMedia  sx={{height: '25%', padding: 2}} alt={props.article.title} component='img' image={mainStore.blackMode && props.article.thumbnailBlack ? props.article.thumbnailBlack : props.article.thumbnail} />
                 <CardContent sx={{height: '45%'}}>
-                    <Typography sx={{overflow: 'hidden', textOverflow:'ellipsis', display:'-webkit-box', WebkitLineClamp:'3', WebkitBoxOrient:'vertical'}} component='div'>
+                    <Typography sx={{overflow: 'hidden', textOverflow:'ellipsis', display:'-webkit-box', WebkitLineClamp: !mobile ? 1 : 4, WebkitBoxOrient:'vertical'}} component='div'>
                         {props.article.title}
                     </Typography>
                 </CardContent>
                 </CardActionArea>
             </Card>
-            
         </Slide>
         </Tooltip>
         </Box>
