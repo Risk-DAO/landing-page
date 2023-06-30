@@ -4,9 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import { Box } from "@mui/system";
 import arrow from "../images/arrow.png";
 import axios from "axios";
+import riskdao from '../images/riskdao.png';
 import { useSwipeable } from "react-swipeable";
 
 const mediumRSSFeedURL = "https://riskdao-landing-api.la-tribu.xyz/medium"
+
+
+const PinnedPost = {
+    title: 'Introducing Risk DAO',
+    thumbnail: riskdao,
+    link: 'https://medium.com/risk-dao/introducing-risk-dao-75a241115c95'
+}
 
 
 function RenderCard(props) {
@@ -77,7 +85,7 @@ export default function Medium(props) {
         <Container component='main' maxWidth={false} sx={{ mt: 4, mb: 4 }}>
         <Grid {... swipHandlers} container direction="row" flexWrap='wrap' justifyContent="center" alignItems="stretch" rowSpacing={2} columnSpacing={2}>
         <Grid item xs={12} sm={6} lg={4} xl={4}>
-        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={postIndex === 0 ? mediumData[(mediumData.length - 1)] : mediumData[postIndex]} />
+        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={postIndex === 0 ? PinnedPost : mediumData[postIndex]} />
         </Grid>
         <Grid item xs={12} sm={6} lg={4} xl={4}>
         <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={postIndex === 0 ? mediumData[postIndex] : mediumData[postIndex + 1]} />
