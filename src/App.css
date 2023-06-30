@@ -208,11 +208,11 @@ article.dashboard-card.clickable.blur-onhover:hover {
   opacity: 30%
 }
 
-@media (hover: none) and (pointer: coarse) {
+/* @media (hover: none) and (pointer: coarse) {
   .Medium-buttons, .Medium-buttons-dark {
       display: none;
   }
-}
+} */
 
 .partnersContainer {
   margin-bottom: 3vh;

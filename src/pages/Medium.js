@@ -14,7 +14,6 @@ function RenderCard(props) {
     if(!props.article){
         return
     }
-    const onTop = props.onTop ? '20' : '2';
     return (
         <Box sx={{width:'100%', height:'100%'}} ref={containerRef} rel="noreferrer noopener">
         <Slide sx={{minHeight:{xs:'100%', sm:'100%', lg:'100%', xl:'100%',display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}} container={containerRef.current} in={props.slideIn} direction={props.slideDirection}>
@@ -76,15 +75,15 @@ export default function Medium(props) {
     return (<Box sx={{marginTop: '3vh', width: '100%', height: '100%', display: 'flex', flexDirection: 'row', alignContent:'center', alignItems:'center', justifyContent:'space-between'}}>
         <img className={className} style={postIndex === 0 ? { opacity: '5%' } : {}} src={arrow} alt="left-button" onClick={() => handleButton('left')} />
         <Container component='main' maxWidth={false} sx={{ mt: 4, mb: 4 }}>
-        <Grid container direction="row" flexWrap='wrap' justifyContent="center" alignItems="stretch" rowSpacing={2} columnSpacing={2}>
+        <Grid {... swipHandlers} container direction="row" flexWrap='wrap' justifyContent="center" alignItems="stretch" rowSpacing={2} columnSpacing={2}>
         <Grid item xs={12} sm={6} lg={4} xl={4}>
-        <RenderCard onTop={true} slideIn={true} slideDirection={slideDirection} article={mediumData[(mediumData.length - 1)]} />
+        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={postIndex === 0 ? mediumData[(mediumData.length - 1)] : mediumData[postIndex]} />
         </Grid>
-        <Grid {... swipHandlers} item xs={12} sm={6} lg={4} xl={4}>
-        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={mediumData[postIndex]} />
+        <Grid item xs={12} sm={6} lg={4} xl={4}>
+        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={postIndex === 0 ? mediumData[postIndex] : mediumData[postIndex + 1]} />
         </Grid>
-        <Grid {... swipHandlers} item xs={12} sm={6} lg={4} xl={4}>
-        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={mediumData[postIndex + 1]} />
+        <Grid item xs={12} sm={6} lg={4} xl={4}>
+        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={postIndex === 0 ? mediumData[postIndex +1] : mediumData[postIndex + 2]} />
         </Grid>
         </Grid>
         </Container>
