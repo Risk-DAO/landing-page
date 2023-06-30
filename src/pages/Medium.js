@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Box } from "@mui/system";
 import arrow from "../images/arrow.png";
 import axios from "axios";
+import { useSwipeable } from "react-swipeable";
 
 const mediumRSSFeedURL = "https://riskdao-landing-api.la-tribu.xyz/medium"
 
@@ -38,6 +39,7 @@ export default function Medium(props) {
     const className = blackMode ? 'Medium-buttons-dark' : 'Medium-buttons'
     const [slideIn, setSlideIn] = useState(true);
     const [slideDirection, setSlideDirection] = useState('down');
+
     useEffect(() => {
         async function fetchPosts() {
             const data = await axios.get(mediumRSSFeedURL);
@@ -45,6 +47,11 @@ export default function Medium(props) {
         }
         fetchPosts();
     }, []);
+
+    const swipHandlers = useSwipeable({
+        onSwipedLeft: (eventData) => handleButton('left'),
+        onSwipedRight: (eventData) => handleButton('right'),
+    })
 
     function handleButton(direction) {
         const increment = direction === 'left' ? postIndex === 0 ? 0 : postIndex === 1 ? -1 : -2 : postIndex === (mediumData.length - 3) ? 0 : postIndex === (mediumData.length - 4) ? 1 : 2;
@@ -69,8 +76,8 @@ export default function Medium(props) {
     return (<Box sx={{marginTop: '3vh', width: '100%', height: '100%', display: 'flex', flexDirection: 'row', alignContent:'center', alignItems:'center', justifyContent:'space-between'}}>
         <img className={className} style={postIndex === 0 ? { opacity: '5%' } : {}} src={arrow} alt="left-button" onClick={() => handleButton('left')} />
         <Container component='main' maxWidth={false} sx={{ mt: 4, mb: 4 }}>
-        <Grid container direction="row" flexWrap='wrap' justifyContent="center" alignItems="stretch" rowSpacing={2} columnSpacing={2}>
-        <Grid minHeight={'100%'} item xs={12} sm={6} lg={4} xl={4}>
+        <Grid {... swipHandlers} container direction="row" flexWrap='wrap' justifyContent="center" alignItems="stretch" rowSpacing={2} columnSpacing={2}>
+        <Grid item xs={12} sm={6} lg={4} xl={4}>
         <RenderCard onTop={true} slideIn={true} slideDirection={slideDirection} article={mediumData[(mediumData.length - 1)]} />
         </Grid>
         <Grid item xs={12} sm={6} lg={4} xl={4}>
