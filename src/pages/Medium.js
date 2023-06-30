@@ -15,6 +15,11 @@ const PinnedPost = {
     thumbnail: riskdao,
     link: 'https://medium.com/risk-dao/introducing-risk-dao-75a241115c95'
 }
+const lastPost = {
+    title: 'Read more on Medium',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Medium_%28website%29_logo.svg',
+    link: 'https://medium.com/risk-dao'
+}
 
 
 function RenderCard(props) {
@@ -27,7 +32,7 @@ function RenderCard(props) {
         <Slide sx={{minHeight:{xs:'100%', sm:'100%', lg:'100%', xl:'100%',display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}} container={containerRef.current} in={props.slideIn} direction={props.slideDirection}>
             <Card elevation={12} sx={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%'}}>
                 <CardActionArea href={props.article.link} target="_blank">
-                <CardMedia  sx={{height: '45%'}} alt={props.article.title} component='img' image={props.article.thumbnail} />
+                <CardMedia  sx={{height: '45%', padding: 2}} alt={props.article.title} component='img' image={props.article.thumbnail} />
                 <CardContent  sx={{height: '45%'}}>
                     <Typography component='div'>
                         {props.article.title}
@@ -46,6 +51,7 @@ export default function Medium(props) {
     const className = blackMode ? 'Medium-buttons-dark' : 'Medium-buttons'
     const [slideIn, setSlideIn] = useState(true);
     const [slideDirection, setSlideDirection] = useState('down');
+    console.log(postIndex)
 
     useEffect(() => {
         async function fetchPosts() {
@@ -91,7 +97,7 @@ export default function Medium(props) {
         <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={postIndex === 0 ? mediumData[postIndex] : mediumData[postIndex + 1]} />
         </Grid>
         <Grid item xs={12} sm={6} lg={4} xl={4}>
-        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={postIndex === 0 ? mediumData[postIndex +1] : mediumData[postIndex + 2]} />
+        <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={postIndex === 0 ? mediumData[postIndex +1] : (postIndex === mediumData.length - 3) ? lastPost : mediumData[postIndex + 2]} />
         </Grid>
         </Grid>
         </Container>
