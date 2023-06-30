@@ -50,8 +50,7 @@ export default function Medium(props) {
     const blackMode = props.blackMode;
     const className = blackMode ? 'Medium-buttons-dark' : 'Medium-buttons'
     const [slideIn, setSlideIn] = useState(true);
-    const [slideDirection, setSlideDirection] = useState('down');
-    console.log(postIndex)
+    const [slideDirection, setSlideDirection] = useState('left');
 
     useEffect(() => {
         async function fetchPosts() {
