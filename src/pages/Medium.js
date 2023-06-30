@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { Box } from "@mui/system";
 import arrow from "../images/arrow.png";
 import axios from "axios";
+import mainStore from "../stores/main.store";
+import medium from '../logos/medium.svg';
+import mediumDark from '../logos/mediumDark.png';
 import riskdao from '../images/riskdao.png';
 import { useSwipeable } from "react-swipeable";
 
@@ -17,7 +20,8 @@ const PinnedPost = {
 }
 const lastPost = {
     title: 'Read more on Medium',
-    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Medium_%28website%29_logo.svg',
+    thumbnail:medium,
+    thumbnailBlack :mediumDark,
     link: 'https://medium.com/risk-dao'
 }
 
@@ -28,11 +32,11 @@ function RenderCard(props) {
         return
     }
     return (
-        <Box sx={{width:'100%', height:'100%'}} ref={containerRef} rel="noreferrer noopener">
+        <Box sx={{width:'100%', height:'100%', maxHeight:'30vh'}} ref={containerRef} rel="noreferrer noopener">
         <Slide sx={{minHeight:{xs:'100%', sm:'100%', lg:'100%', xl:'100%',display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}} container={containerRef.current} in={props.slideIn} direction={props.slideDirection}>
             <Card elevation={12} sx={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%'}}>
                 <CardActionArea href={props.article.link} target="_blank">
-                <CardMedia  sx={{height: '45%', padding: 2}} alt={props.article.title} component='img' image={props.article.thumbnail} />
+                <CardMedia  sx={{height: '45%', padding: 2}} alt={props.article.title} component='img' image={mainStore.blackMode && props.article.thumbnailBlack ? props.article.thumbnailBlack : props.article.thumbnail} />
                 <CardContent  sx={{height: '45%'}}>
                     <Typography component='div'>
                         {props.article.title}
@@ -52,6 +56,8 @@ export default function Medium(props) {
     const [slideIn, setSlideIn] = useState(true);
     const [slideDirection, setSlideDirection] = useState('left');
 
+    console.log(postIndex)
+
     useEffect(() => {
         async function fetchPosts() {
             const data = await axios.get(mediumRSSFeedURL);
@@ -66,7 +72,7 @@ export default function Medium(props) {
     })
 
     function handleButton(direction) {
-        const increment = direction === 'left' ? postIndex === 0 ? 0 : postIndex === 1 ? -1 : -2 : postIndex === (mediumData.length - 3) ? 0 : postIndex === (mediumData.length - 4) ? 1 : 2;
+        const increment = direction === 'left' ? postIndex === 0 ? 0 : postIndex > 3 ? -3 : -postIndex : postIndex === (mediumData.length - 3) ? 0 : postIndex < (mediumData.length - 4) ? 3 : (mediumData.length - 3 - postIndex);
         if(increment === 0){
             return
         }
