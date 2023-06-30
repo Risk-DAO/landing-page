@@ -251,6 +251,14 @@ article.dashboard-card.clickable.blur-onhover:hover {
   align-items: center;
   justify-content: center;
 }
+.gridItemMoonwell {
+  height: 7vh;
+  width: 14vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./images/stars.webp);
+}
 
 .gridItem img {
   width: 100%;

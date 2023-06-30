@@ -33,7 +33,7 @@ function GridItem(partner, blackMode) {
     const modalTitle = partner.name.charAt(0).toUpperCase() + partner.name.slice(1);
 
 
-    return <div className="gridItem" onTouchStart={handleModal}>
+    return <div className={partner.name === 'moonwell' && !blackMode ? 'gridItemMoonwell' : 'gridItem'} onTouchStart={handleModal}>
         <Dialog className='contrast' onClose={() => setVisibility(false)} open={visibility}><DialogTitle>{modalTitle}</DialogTitle> <DialogContent><DialogContentText>{partner.description}</DialogContentText></DialogContent></Dialog>
         <img alt={`${partner.name} logo`} src={blackMode ? partner.logoDark : partner.logo} title={partner.description} />
     </div>
