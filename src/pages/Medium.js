@@ -86,7 +86,7 @@ export default function Medium(props) {
             <div>Could not load Medium posts</div>
         )
     }
-    return (<Box sx={{marginTop: '3vh', width: '100%', height: '100%', display: 'flex', flexDirection: 'row', alignContent:'center', alignItems:'center', justifyContent:'space-between'}}>
+    return (<Box sx={{marginTop: '3vh', width: '100%', height: '100%', minHeight:'35vh', display: 'flex', flexDirection: 'row', alignContent:'center', alignItems:'center', justifyContent:'space-between'}}>
         <img className={className} style={postIndex === 0 ? { opacity: '5%' } : {}} src={arrow} alt="left-button" onClick={() => handleButton('left')} />
         <Container component='main' maxWidth={false} sx={{ mt: 4, mb: 4 }}>
         <Grid {... swipHandlers} container direction="row" flexWrap='wrap' justifyContent="center" alignItems="stretch" rowSpacing={2} columnSpacing={2}>

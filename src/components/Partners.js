@@ -1,5 +1,4 @@
-import { Dialog, DialogContent, DialogContentText, DialogTitle, Tooltip } from '@mui/material';
-
+import { Tooltip } from '@mui/material';
 import aave from '../logos/aave.svg';
 import agave from '../logos/agave.svg';
 import aurigami from '../logos/aurigami.svg';
@@ -21,21 +20,12 @@ import meldDark from '../logos/meldDark.svg';
 import moonwell from '../logos/moonwell.svg';
 import nftperp from '../logos/nftperp.svg';
 import nftperpDark from '../logos/nftperpDark.svg';
-import { useState } from 'react';
 import vesta from '../logos/vesta.svg';
 import vestaDark from '../logos/vestaDark.svg';
 
 function GridItem(partner, blackMode) {
-    const [visibility, setVisibility] = useState(false);
-    function handleModal(){
-        setVisibility(!visibility);
-    }
-    const modalTitle = partner.name.charAt(0).toUpperCase() + partner.name.slice(1);
-
-
-    return <div className={partner.name === 'moonwell' && !blackMode ? 'gridItemMoonwell' : 'gridItem'} onTouchStart={handleModal}>
-        <Dialog className='contrast' onClose={() => setVisibility(false)} open={visibility}><DialogTitle>{modalTitle}</DialogTitle> <DialogContent><DialogContentText>{partner.description}</DialogContentText></DialogContent></Dialog>
-        <Tooltip disableFocusListener enterTouchDelay={0} title={partner.description}><img alt={`${partner.name} logo`} src={blackMode ? partner.logoDark : partner.logo} /></Tooltip>
+    return <div className={partner.name === 'moonwell' && !blackMode ? 'gridItemMoonwell' : 'gridItem'}>
+        <Tooltip leaveTouchDelay={3000} arrow disableFocusListener enterTouchDelay={0} title={partner.description}><img alt={`${partner.name} logo`} src={blackMode ? partner.logoDark : partner.logo} /></Tooltip>
     </div>
 }
 const partners = [
