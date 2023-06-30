@@ -49,8 +49,8 @@ export default function Medium(props) {
     }, []);
 
     const swipHandlers = useSwipeable({
-        onSwipedLeft: (eventData) => handleButton('left'),
-        onSwipedRight: (eventData) => handleButton('right'),
+        onSwipedLeft: (eventData) => handleButton('right'),
+        onSwipedRight: (eventData) => handleButton('left'),
     })
 
     function handleButton(direction) {
@@ -76,14 +76,14 @@ export default function Medium(props) {
     return (<Box sx={{marginTop: '3vh', width: '100%', height: '100%', display: 'flex', flexDirection: 'row', alignContent:'center', alignItems:'center', justifyContent:'space-between'}}>
         <img className={className} style={postIndex === 0 ? { opacity: '5%' } : {}} src={arrow} alt="left-button" onClick={() => handleButton('left')} />
         <Container component='main' maxWidth={false} sx={{ mt: 4, mb: 4 }}>
-        <Grid {... swipHandlers} container direction="row" flexWrap='wrap' justifyContent="center" alignItems="stretch" rowSpacing={2} columnSpacing={2}>
+        <Grid container direction="row" flexWrap='wrap' justifyContent="center" alignItems="stretch" rowSpacing={2} columnSpacing={2}>
         <Grid item xs={12} sm={6} lg={4} xl={4}>
         <RenderCard onTop={true} slideIn={true} slideDirection={slideDirection} article={mediumData[(mediumData.length - 1)]} />
         </Grid>
-        <Grid item xs={12} sm={6} lg={4} xl={4}>
+        <Grid {... swipHandlers} item xs={12} sm={6} lg={4} xl={4}>
         <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={mediumData[postIndex]} />
         </Grid>
-        <Grid item xs={12} sm={6} lg={4} xl={4}>
+        <Grid {... swipHandlers} item xs={12} sm={6} lg={4} xl={4}>
         <RenderCard slideIn={slideIn} slideDirection={slideDirection} article={mediumData[postIndex + 1]} />
         </Grid>
         </Grid>
