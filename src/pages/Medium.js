@@ -38,7 +38,7 @@ function RenderCard(props) {
             
             <Card elevation={12} sx={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', height:'100%'}}>
                 <CardActionArea href={props.article.link} target="_blank">
-                <CardMedia  sx={{height: '45%', padding: 2}} alt={props.article.title} component='img' image={mainStore.blackMode && props.article.thumbnailBlack ? props.article.thumbnailBlack : props.article.thumbnail} />
+                <CardMedia  sx={{height: '25%', padding: 2}} alt={props.article.title} component='img' image={mainStore.blackMode && props.article.thumbnailBlack ? props.article.thumbnailBlack : props.article.thumbnail} />
                 <CardContent sx={{height: '45%'}}>
                     <Typography sx={{overflow: 'hidden', textOverflow:'ellipsis', display:'-webkit-box', WebkitLineClamp:'3', WebkitBoxOrient:'vertical'}} component='div'>
                         {props.article.title}
