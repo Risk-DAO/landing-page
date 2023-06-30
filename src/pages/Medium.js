@@ -56,8 +56,6 @@ export default function Medium(props) {
     const [slideIn, setSlideIn] = useState(true);
     const [slideDirection, setSlideDirection] = useState('left');
 
-    console.log(postIndex)
-
     useEffect(() => {
         async function fetchPosts() {
             const data = await axios.get(mediumRSSFeedURL);
