@@ -111,7 +111,7 @@ const partners = [
         'name': 'nftperp',
         'logo': nftperp,
         'logoDark': nftperpDark,
-        'description': '',
+        'description': 'Price pegging research.',
     },
     {
         'name': 'vesta',
@@ -126,7 +126,7 @@ export default function Partners(props) {
     const className = blackMode ? 'trustedByDark' : 'trustedBy'
 
 
-    return <div className="partnersContainer"><div className={className}>Trusted By
+    return <div className="partnersContainer"><div className={className}>Grants and Bounties
     </div>
         <div className="gridContainer">
             {partners.map((_) => GridItem(_, blackMode))}
